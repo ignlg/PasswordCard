@@ -14,6 +14,11 @@ String to define the structure of each code/cell.
 | __A__  | upper case ascii alphabetic characters `[A-Z]` |
 | __1__  | numeric characters `0123456789`                |
 | __!__  | symbols `!?@#$%&()[]+-*/=<>_.,;"'`             |
+| __i__  | `[a-zA-Z]`                                     |
+| __n__  | `[0-9a-z]`                                     |
+| __N__  | `[0-9A-Z]`                                     |
+| __9__  | `[0-9a-zA-Z]`                                  |
+| __*__  | `[0-9a-zA-Z]` + symbols                        |
 
 _Examples:_
 

@@ -20,6 +20,11 @@ class PasswordCard
     "A": "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     "1": "0123456789"
     "!": "!?@#$%&()[]+-*/=<>_.,;\"'"
+    "i": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    "n": "0123456789abcdefghijklmnopqrstuvwxyz"
+    "N": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    "9": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    "*": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?@#$%&()[]+-*/=<>_.,;\"'"
 
   _seedInc: 0
 
@@ -56,7 +61,7 @@ class PasswordCard
 
     return keyn
 
-  # Gets all the chars needed to fullfill the pattern for a row. 
+  # Gets all the chars needed to fullfill the pattern for a row.
   _getPatternChars: ->
     phrases = []
     for patt in @pattern
