@@ -25,7 +25,7 @@ _Examples:_
 
 ### Password Card Example
 
-Output of the `genPwdCardConsole.js` example. Passphrase: `ThisIsMyCardCode, size: 13x13, pattern: `aA1!`.
+Output of the `genPwdCardConsole.js` example. Passphrase: `ThisIsMyCardCode`, size: 13x13, pattern: `aA1!`.
 
 	qS1+	rH6_	kR3[	jB4>	iQ2!	eJ8$	hO5?	pL9(	wX0.	mD7=	gI2#	lP1&	oF9;
 	aT0[	yR6@	vK1)	pY2,	nE9;	iB4?	lG3!	uJ5(	wP8]	cC7#	dI5&	bF2<	qH7-
