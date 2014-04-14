@@ -1,5 +1,8 @@
 ###
-Flexible Password Card Generator
+PasswordCard
+
+Flexible Password Card Generator.
+
 https://github.com/ignlg/PasswordCard
 
 Version: 0.5

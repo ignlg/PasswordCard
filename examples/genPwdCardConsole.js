@@ -2,7 +2,7 @@
 Console log output
 */
 var PasswordCard = require("../lib/PasswordCard.js");
-var PCard = new PasswordCard("salt&pepper");
+var PCard = new PasswordCard("ThisIsMyCardCode");
 
 var card = PCard.getCard();
 
