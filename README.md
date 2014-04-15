@@ -32,16 +32,16 @@ _Examples:_
 
 Output of the `genPwdCardConsole.js` example. Passphrase: `ThisIsMyCardCode`, size: 13x13, pattern: `aA1!`.
 
-	qS1+	rH6_	kR3[	jB4>	iQ2!	eJ8$	hO5?	pL9(	wX0.	mD7=	gI2#	lP1&	oF9;
-	aT0[	yR6@	vK1)	pY2,	nE9;	iB4?	lG3!	uJ5(	wP8]	cC7#	dI5&	bF2<	qH7-
-	eE7)	iR4@	rV1,	dH3_	lP8<	mC5+	zW2(	uJ9$	qS6]	xT0-	jI4%	oK8;	vX3=
-	rR4_	sE8@	eW9<	fL7(	hM3'	yI6+	nD1,	gG5>	wB2&	dF0]	iA1!	lS2)	xV3[
-	dN3>	nK8&	kA0?	aL5$	pT6"	zO1[	hB7<	oZ4.	eR2#	uM9)	rC2+	gS3-	lV0!
-	jW5_	gB3)	eF1-	dV0@	oO7.	bT2'	nA6=	tQ4#	wG9]	uR8>	lI2+	fK3;	cH7%
-	yS6@	jP4>	sI0*	iX8$	rZ5<	cV1-	zA2"	qQ3.	wE9#	aG7)	oN8'	lU1&	vW6(
-	bY7"	dB9.	rC8,	oG0(	aH1_	pJ4!	nU6<	qI3@	uP2#	lA5;	fO3'	zD9>	tE2/
-	dA4=	mX7$	nI2!	hN8#	zP5?	iL9<	vT3)	pQ0;	eR1&	yH6@	rG3'	tC1/	fF2[
-	bX7<	eY2_	hE4>	uV5&	pK0*	fJ9#	sR1/	dT3,	nB6)	jL8"	yM6(	wF4@	aP1]
-	eC7(	vB8<	nE1#	iP6_	zM3+	rO2%	fS0;	oK4&	mR5-	wG9*	bV0)	aH9@	uZ8'
-	sF2@	eM4%	lL0(	qD3-	dO6#	iK5*	fE8/	gQ1$	cU9_	mP7&	nZ2=	vG0!	tY6]
-	xP4'	lT1,	yQ0?	hW7>	zY2;	dN8[	mS9/	nZ6-	wJ3)	fA5<	jK6!	bX8#	iB7+
+	qX1?	mV9_	fF4]	eM2/	nD0&	pP6-	sW8#	wQ7,	cC3%	bZ5[	oO8"	vJ0)	lS5!
+	fA2(	aM1;	mT7)	eY0?	gD9[	nZ4!	dO6*	uP5@	pL3_	vU8,	lQ2.	kK4%	wE1$
+	rS1#	wC5'	nJ6?	gQ0&	vN7*	hX4%	qY3,	mV9;	dG2=	pD8<	iU4+	aZ2(	jM7"
+	sO2$	gZ3[	yP6%	dM4_	iA7(	jG8]	wR0-	hU9<	aC5,	fJ1!	bI6=	nF4.	vW7'
+	qC2?	jA3"	wI8<	iY5!	zF9%	oX6+	xQ0&	hU1=	sE4[	uJ7'	cG0*	rH7/	mP1@
+	lL3%	hB1[	xS2!	tK4(	nA5>	sH7)	rJ9,	wF8-	dG0/	qO6<	uN4]	gV0"	cC7$
+	vX2*	iW5]	tB1?	uV4!	dN6<	rH3+	bC9@	wU0(	sK8&	cF7;	mD8"	qQ7%	hR1)
+	uU9,	cO8%	kR3&	dD7_	bT6.	hX2>	iF1]	wH5$	aK4+	eE0/	gJ5;	yY4@	jP6-
+	nD9<	jT4*	mZ0;	aO8]	bF6+	vG1_	dS2&	fY7$	eM3%	gB5)	oW9[	wJ3.	sC7'
+	eR2;	xD3=	hA6>	zK7"	iW8)	rN0?	bT5#	gV4!	cJ9%	mC1@	uB0-	wS3]	lX2(
+	jL6[	aZ8#	eJ0(	xA2]	gU5-	uO1!	lY7'	cB3,	kW9"	zM4_	wT4;	nS5%	pC9=
+	wL7=	zO1<	sH8(	qR3.	gM0>	pB5%	vW2,	nC6'	jQ4;	cS9-	hJ6]	uF5_	yI7)
+	rN8#	qE1!	eI9<	vU3)	iL6.	aO0(	jV7-	yR5=	pF4"	kM2[	fJ4'	tS9>	sK7*
