@@ -28,7 +28,13 @@ _Examples:_
 | Numbers only          | `1111`  |
 | Alpha characters only | `aAaA`  |
 
-### Password Card Example
+### Live website
+
+[Custom Password Card](http://ignlg.github.io/passwordcard/)
+
+### Password Card Examples
+
+#### Console output
 
 Output of the `genPwdCardConsole.js` example. Passphrase: `ThisIsMyCardCode`, size: 13x13, pattern: `aA1!`.
 
