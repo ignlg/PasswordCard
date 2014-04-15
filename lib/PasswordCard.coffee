@@ -46,15 +46,14 @@ class PasswordCard
   _getKey: (pass) ->
     sha = crypto.createHash("sha256")
     sha.update(pass, "utf-8")
-    return sha.digest("base64")
+    return sha.digest("hex")
 
   # Gets a string of characters from a dictionary for a given key.
   _getChars: (key, dict, numchars) ->
     d = dict.split ""
     keyn = ""
-
     for j in [0...numchars]
-      n = parseInt key.charCodeAt j
+      n = parseInt key[(j*2)..(j*2+1)], 16
       # Splice to avoid character repetition, refill if empty
       d = dict.split "" if d.length is 0
       keyn += d.splice n % d.length, 1
