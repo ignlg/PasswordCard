@@ -24,7 +24,8 @@ class PasswordCard
     "n": "0123456789abcdefghijklmnopqrstuvwxyz"
     "N": "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     "9": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    "*": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?@#$%&()[]+-*/=<>_.,;\"'"
+    "*": "0123456789abcdefghijklmnopqrstuvwxyz\
+ABCDEFGHIJKLMNOPQRSTUVWXYZ!?@#$%&()[]+-*/=<>_.,;\"'"
 
   _seedInc: 0
 
@@ -53,7 +54,7 @@ class PasswordCard
     d = dict.split ""
     keyn = ""
     for j in [0...numchars]
-      n = parseInt key[(j*2)..(j*2+1)], 16
+      n = parseInt key[(j * 2)..(j * 2 + 1)], 16
       # Splice to avoid character repetition, refill if empty
       d = dict.split "" if d.length is 0
       keyn += d.splice n % d.length, 1
@@ -64,7 +65,8 @@ class PasswordCard
   _getPatternChars: ->
     phrases = []
     for patt in @pattern
-      phrases.push @_getChars @_getKey(@_getPass()), @dictionaries[patt], @columns
+      phrases.push @_getChars @_getKey(@_getPass()), @dictionaries[patt]
+      , @columns
 
     return phrases
 
