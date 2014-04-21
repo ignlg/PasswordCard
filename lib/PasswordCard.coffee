@@ -13,7 +13,7 @@ crypto = require "crypto"
 
 class PasswordCard
 
-  constructor: (@seed, @columns = 13, @rows = 13, @pattern = "aA1!") ->
+  constructor: (@seed, @columns = 13, @rows = 13, @pattern = "####") ->
 
   dictionaries:
     "a": "abcdefghijklmnopqrstuvwxyz"
@@ -26,6 +26,8 @@ class PasswordCard
     "9": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
     "*": "0123456789abcdefghijklmnopqrstuvwxyz\
 ABCDEFGHIJKLMNOPQRSTUVWXYZ!?@#$%&()[]+-*/=<>_.,;\"'"
+
+  _securePattern: "aA1!"
 
   _seedInc: 0
 
@@ -43,33 +45,87 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ!?@#$%&()[]+-*/=<>_.,;\"'"
            inc
     return pass
 
-  # Generate a base-64 hash from a passphrase
+  # Generates an hex hash from a passphrase
   _getKey: (pass) ->
     sha = crypto.createHash("sha256")
     sha.update(pass, "utf-8")
     return sha.digest("hex")
 
-  # Gets a string of characters from a dictionary for a given key.
-  _getChars: (key, dict, numchars) ->
-    d = dict.split ""
-    keyn = ""
-    for j in [0...numchars]
-      n = parseInt key[(j * 2)..(j * 2 + 1)], 16
-      # Splice to avoid character repetition, refill if empty
-      d = dict.split "" if d.length is 0
-      keyn += d.splice n % d.length, 1
+  # Gets a string of characters
+  _getSecureChars: (numchars) ->
+    # Variable initialize
+    phrase = ''
+    dictionaries = {}
+    originalDictionaries = @dictionaries
+    patternIndex = 0
+    pattern = @pattern
 
-    return keyn
+    secure = ''
+    securePattern = @_securePattern
 
-  # Gets all the chars needed to fullfill the pattern for a row.
-  _getPatternChars: ->
-    phrases = []
-    for patt in @pattern
-      phrases.push @_getChars @_getKey(@_getPass()), @dictionaries[patt]
-      , @columns
+    # Loop secure pattern
+    nextSecurePattern = (number) ->
+      if secure.length is 0
+        secure = securePattern
 
-    return phrases
+      idx = number % secure.length
+      patt = secure.substr idx, 1
+      secure = secure.slice(0, idx) + secure.slice(idx + 1)
+      return patt
 
+    # Copy secure dictionaries
+    copyDictionary = (patt) ->
+      dictionaries[patt] = originalDictionaries[patt]
+      return null
+
+    # Key
+    key = @_getKey @_getPass()
+    keyIdx = 0
+
+    getNumber = (n) =>
+      # New key every 32 hex pairs
+      if n < 0 or n > 31
+        key = @_getKey @_getPass()
+        keyIdx = n = 0
+      return parseInt key[(n * 2)..(n * 2 + 1)], 16
+
+    for n in [0...numchars]
+      # Next pattern character
+      patt = pattern[patternIndex]
+
+      # Secure pattern
+      if patt is '#'
+        isSecure = true
+        patt = nextSecurePattern getNumber keyIdx
+        keyIdx++
+      else
+        isSecure = false
+
+      # Fill dictionaries as needed
+      if not dictionaries.hasOwnProperty patt
+        dictionaries[patt] = ''
+
+      if dictionaries[patt].length is 0
+        copyDictionary patt
+
+      dict = dictionaries[patt]
+
+      # Get char index
+      idx = getNumber(keyIdx) % dict.length
+      # Get char
+      phrase += dict.substr idx , 1
+      # Remove char from dictionary
+      dictionaries[patt] = dict.slice(0, idx) + dict.slice(idx + 1)
+
+      # pattern looper
+      patternIndex = (patternIndex + 1) % pattern.length
+
+      # keyIdx goes
+      keyIdx++
+
+    return phrase
+
+  # Get card
   getCard: (seed) ->
     if seed
       _seed = @seed
@@ -77,23 +133,24 @@ ABCDEFGHIJKLMNOPQRSTUVWXYZ!?@#$%&()[]+-*/=<>_.,;\"'"
 
     return false if !@seed
 
-    # Convert the pattern string to array
-    pattern = pattern.split "" if "string" is typeof pattern
-
     card = []
+    chars = @_getSecureChars(@rows * @columns * @pattern.length, @pattern)
+    k = 0
+
     for n in [0...@rows]
-      chars = @_getPatternChars()
       phrase = []
       for column in [0...@columns]
         word = ""
         for char in [0...@pattern.length]
-          word += chars[char][column]
+          word += chars[k++]
 
         phrase.push word
 
       card.push phrase
 
+    #Restore original seed
     @seed = _seed if seed
+
     return card
 
 module.exports = PasswordCard

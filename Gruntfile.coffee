@@ -33,6 +33,17 @@ module.exports = (grunt) ->
             level: "warn"
           space_operators:
             level: "warn"
+
+    jshint:
+      lib:
+        src: ["lib/PasswordCard.js"]
+        options:
+          maxlen: null
+          eqnull: true
+          globals:
+            module: true
+            node: true
+
     watch:
       src:
         files: ['Gruntfile.coffee', 'lib/*.coffee', 'examples/**/*.coffee']
@@ -40,7 +51,9 @@ module.exports = (grunt) ->
 
   grunt.loadNpmTasks "grunt-coffeelint"
   grunt.loadNpmTasks "grunt-contrib-coffee"
+  grunt.loadNpmTasks "grunt-contrib-jshint"
   grunt.loadNpmTasks "grunt-contrib-watch"
 
   grunt.registerTask "lint", ["coffeelint:lib"]
-  grunt.registerTask "default", ["coffeelint:lib", "coffee:development"]
+  grunt.registerTask "default", ["coffeelint:lib", "coffee:development"
+      , "jshint:lib"]

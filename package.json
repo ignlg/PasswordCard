@@ -7,6 +7,7 @@
     "grunt-coffeelint": "0.0.10",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-contrib-coffee": "^0.10.1",
+    "grunt-contrib-jshint": "^0.10.0",
     "browserify": "^3.41.0"
   }
 }
