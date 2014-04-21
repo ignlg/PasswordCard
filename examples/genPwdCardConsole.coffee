@@ -1,5 +1,5 @@
 PasswordCard = require "../lib/PasswordCard.coffee"
-PCard = new PasswordCard "ThisIsMyCardCode", 13, 13, '####'
+PCard = new PasswordCard "ThisIsMyCardCode"
 
 card = PCard.getCard(null)
 

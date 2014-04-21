@@ -19,12 +19,14 @@ String to define the structure of each code/cell.
 | __N__  | `[0-9A-Z]`                                     |
 | __9__  | `[0-9a-zA-Z]`                                  |
 | __*__  | `[0-9a-zA-Z]` + symbols                        |
+| __#__  | like `*` but this cycles through types         |
 
 _Examples:_
 
 | Type                  | Pattern |
 | --------------------- | ------- |
-| Default               | `aA1!`  |
+| Default               | `####`  |
+| One of each           | `aA1!`  |
 | Numbers only          | `1111`  |
 | Alpha characters only | `aAaA`  |
 
@@ -38,16 +40,16 @@ _Examples:_
 
 Output of the `genPwdCardConsole.js` example. Passphrase: `ThisIsMyCardCode`, size: 13x13, pattern: `aA1!`.
 
-	qX1?	mV9_	fF4]	eM2/	nD0&	pP6-	sW8#	wQ7,	cC3%	bZ5[	oO8"	vJ0)	lS5!
-	fA2(	aM1;	mT7)	eY0?	gD9[	nZ4!	dO6*	uP5@	pL3_	vU8,	lQ2.	kK4%	wE1$
-	rS1#	wC5'	nJ6?	gQ0&	vN7*	hX4%	qY3,	mV9;	dG2=	pD8<	iU4+	aZ2(	jM7"
-	sO2$	gZ3[	yP6%	dM4_	iA7(	jG8]	wR0-	hU9<	aC5,	fJ1!	bI6=	nF4.	vW7'
-	qC2?	jA3"	wI8<	iY5!	zF9%	oX6+	xQ0&	hU1=	sE4[	uJ7'	cG0*	rH7/	mP1@
-	lL3%	hB1[	xS2!	tK4(	nA5>	sH7)	rJ9,	wF8-	dG0/	qO6<	uN4]	gV0"	cC7$
-	vX2*	iW5]	tB1?	uV4!	dN6<	rH3+	bC9@	wU0(	sK8&	cF7;	mD8"	qQ7%	hR1)
-	uU9,	cO8%	kR3&	dD7_	bT6.	hX2>	iF1]	wH5$	aK4+	eE0/	gJ5;	yY4@	jP6-
-	nD9<	jT4*	mZ0;	aO8]	bF6+	vG1_	dS2&	fY7$	eM3%	gB5)	oW9[	wJ3.	sC7'
-	eR2;	xD3=	hA6>	zK7"	iW8)	rN0?	bT5#	gV4!	cJ9%	mC1@	uB0-	wS3]	lX2(
-	jL6[	aZ8#	eJ0(	xA2]	gU5-	uO1!	lY7'	cB3,	kW9"	zM4_	wT4;	nS5%	pC9=
-	wL7=	zO1<	sH8(	qR3.	gM0>	pB5%	vW2,	nC6'	jQ4;	cS9-	hJ6]	uF5_	yI7)
-	rN8#	qE1!	eI9<	vU3)	iL6.	aO0(	jV7-	yR5=	pF4"	kM2[	fJ4'	tS9>	sK7*
+	qE7,	hR6&	jW0-	uN9<	rL2[	pA4%	zS5"	aV1_	kF8;	fI3@	dC2]	tG1*	bM3'
+	iO5>	yP7?	vY4=	eB9!	sX0(	cD6#	oK8/	lZ3$	mH8.	nT4+	xQ2)	wJ6;	gU1'
+	jN0]	lI5)	yH9[	iT7=	zJ9-	wZ7,	sU2&	fS6.	mA0_	nF4!	rQ5%	tE3#	eR8(
+	pB1$	qC9<	cD8+	gG2"	hV4?	dP0/	uY5@	vM7*	bK1>	oX6!	xO3"	aL2;	kW1*
+	uM0'	fB7@	dX8/	hA9=	iC6-	wI5(	zF4<	sP3.	qD1]	rN0+	aS7)	lW9?	yQ3_
+	gO6%	jY4[	pL8&	tU2,	nH5$	cJ2>	kZ0#	vR1$	eG5#	xV9@	oK7;	bT6<	mE3?
+	cI4>	zZ8"	eR4_	mM7[	vJ0%	xB8(	tO2-	nX6&	fQ5/	hA1]	gG9*	rT3,	wU9=
+	kV8)	lC2!	aK3+	sH1'	uY6.	iW5@	yS7%	bD0#	jF4$	oL3,	dP6_	pN0>	qE8"
+	oQ4)	nX5!	vG2]	fB1[	rW7;	qP9+	aJ5-	mF9?	iD4/	lC7*	cH2.	yY8(	sO1'
+	gK3<	jZ6=	xU0&	kA4[	eE8=	tL5-	wS0%	bR3"	uN6$	hV1!	dM2*	pT7;	zI9,
+	nC6.	lW4&	xA3'	tH2<	uU8+	vG5#	cJ7)	dP0/	eI1(	qK9_	zV3]	aE4@	bQ5>
+	kF9?	rZ7<	iO0'	hS1*	sD2%	oT8[	gY6(	fX7-	mR2.	pM6,	yN3&	wL5@	jB8)
+	dW9;	cC1]	gJ0#	vL4$	bI7>	sT9_	uS4"	rA2/	qY3=	aO1!	iP8+	zV5?	pE0(
